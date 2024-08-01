@@ -1,5 +1,0 @@
-
-
-
-docker build -t [nombre-mi-proyecto-php] .
-docker run -d -p 8080:80 --name [mi-contenedor-php] [nombre-mi-proyecto-php]
