@@ -26,7 +26,20 @@ class PackController {
         // Mostrar la respuesta JSON
         echo json_encode($response, JSON_PRETTY_PRINT);
         //return $packModels;
+
+    }
+
+    
+    public function setstate() {
+        // Obtener datos de la solicitud
+        $data = json_decode(file_get_contents("php://input"), true);
         
+        // Verificar datos
+        if (!empty($data['id_orden']) && !empty($data['id_chofer'])) {
+                echo json_encode(["coderror" => "0","message" => "id_orden ".$data['id_orden'].";setstate successfull."]);
+        } else {
+            echo json_encode(["coderror" => "1","message" => "setstate failed."]);
+        }
     }
 
 }

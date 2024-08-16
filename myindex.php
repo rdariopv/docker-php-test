@@ -20,7 +20,12 @@ if ($request === '/login' && $method === 'POST') {
 else if($request === '/getorderpack' && $method === 'POST'){
 	$controller = new PackController();
     $controller->getOrderPack();
-}else
+}
+else if($request === '/setstate' && $method === 'POST'){
+	$controller = new PackController();
+    $controller->setstate();
+}
+else
 {
 	if ($request === '/index' && $method === 'GET'){
 		include './views/home.php';
